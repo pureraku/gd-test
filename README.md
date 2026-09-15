@@ -2,5 +2,6 @@
 
 Just testing the waters
 
+![Preview](images/preview.png)
 
->Built with Godot.
+> Built with Godot.
