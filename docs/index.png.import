@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb5gcxvcfc11b"
-path="res://.godot/imported/tinygame.apple-touch-icon.png-a0aaabd8fbe4c4dbf3da81fca4b4fc92.ctex"
+uid="uid://flo5ojdm0yvy"
+path="res://.godot/imported/index.png-0c78d14d192abe5f22f8c25928ca1ab8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/tinygame.apple-touch-icon.png"
-dest_files=["res://.godot/imported/tinygame.apple-touch-icon.png-a0aaabd8fbe4c4dbf3da81fca4b4fc92.ctex"]
+source_file="res://docs/index.png"
+dest_files=["res://.godot/imported/index.png-0c78d14d192abe5f22f8c25928ca1ab8.ctex"]
 
 [params]
 

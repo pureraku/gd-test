@@ -3,23 +3,28 @@
 [ext_resource type="Shader" uid="uid://c4plex6i2o8id" path="res://shaders/plane.gdshader" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://0h22680bq4t4" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Shader" uid="uid://206u26opoxc5" path="res://shaders/box.gdshader" id="2_4wyf3"]
-[ext_resource type="Script" uid="uid://um4vq2o7entm" path="res://scripts/lens_flare.gd" id="4_k0juu"]
 
-[sub_resource type="Environment" id="Environment_qfnet"]
-background_mode = 1
-ambient_light_color = Color(0.52906674, 0.5290667, 0.5290667, 1)
-fog_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.46
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4wyf3"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_k0juu"]
+sky_material = SubResource("ProceduralSkyMaterial_4wyf3")
+
+[sub_resource type="Environment" id="Environment_71j4m"]
+background_mode = 2
+sky = SubResource("Sky_k0juu")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rwgxs"]
 render_priority = 0
 shader = ExtResource("1_4wyf3")
-shader_parameter/deep_color = Color(0.005, 0.04, 0.12, 1)
-shader_parameter/shallow_color = Color(0.02, 0.3, 0.4, 1)
-shader_parameter/wave_height = 0.15
+shader_parameter/deep_color = Color(0.005, 0.035, 0.1, 1)
+shader_parameter/shallow_color = Color(0.02, 0.3, 0.42, 1)
+shader_parameter/wave_height = 0.25
 shader_parameter/wave_length = 4.0
-shader_parameter/wave_speed = 1.0
+shader_parameter/wave_speed = 1.2
 shader_parameter/wave_2_height = 0.12
 shader_parameter/wave_2_length = 2.5
 shader_parameter/wave_3_height = 0.06
@@ -27,7 +32,7 @@ shader_parameter/wave_3_length = 1.4
 shader_parameter/ripple_strength = 0.25
 shader_parameter/ripple_scale = 12.0
 shader_parameter/ripple_speed = 0.8
-shader_parameter/roughness = 0.12
+shader_parameter/roughness = 0.08
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tj4qg"]
 material = SubResource("ShaderMaterial_rwgxs")
@@ -57,11 +62,12 @@ material = SubResource("ShaderMaterial_4wyf3")
 
 [node name="World" type="Node3D" unique_id=28585447]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=879292508]
-environment = SubResource("Environment_qfnet")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=329539065]
+environment = SubResource("Environment_71j4m")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=744211652]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2097727554]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.99098533, 1, 0.81523246, 1)
 shadow_enabled = true
 
 [node name="Plane" type="StaticBody3D" parent="." unique_id=196638356]
@@ -84,9 +90,7 @@ shape = SubResource("BoxShape3D_vov4h")
 [node name="Player" parent="." unique_id=478454415 instance=ExtResource("1_nnsk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
 
-[node name="LensFlare" type="CanvasLayer" parent="." unique_id=1097899889 node_paths=PackedStringArray("sun_position")]
-script = ExtResource("4_k0juu")
-sun_position = NodePath("../SunPosition")
+[node name="LensFlare" type="CanvasLayer" parent="." unique_id=1097899889]
 
 [node name="Flare" type="TextureRect" parent="LensFlare" unique_id=805649756]
 offset_right = 300.0

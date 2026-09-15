@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccgeh5s4dlguv"
-path="res://.godot/imported/tinygame.icon.png-eedede7eeb88edff8ab2b7c88ed04548.ctex"
+uid="uid://bfg8lnkhpv0en"
+path="res://.godot/imported/index.icon.png-b92c9a802ad4b78e247784454a6b506f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/tinygame.icon.png"
-dest_files=["res://.godot/imported/tinygame.icon.png-eedede7eeb88edff8ab2b7c88ed04548.ctex"]
+source_file="res://docs/index.icon.png"
+dest_files=["res://.godot/imported/index.icon.png-b92c9a802ad4b78e247784454a6b506f.ctex"]
 
 [params]
 
