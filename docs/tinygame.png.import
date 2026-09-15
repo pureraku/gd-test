@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lwcp1sfoamxi"
-path="res://.godot/imported/tinygame.png-780df21726208c36d9080d717306295c.ctex"
+path="res://.godot/imported/tinygame.png-26c649dfff421e188aeb43f4609d9858.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://target/tinygame.png"
-dest_files=["res://.godot/imported/tinygame.png-780df21726208c36d9080d717306295c.ctex"]
+source_file="res://docs/tinygame.png"
+dest_files=["res://.godot/imported/tinygame.png-26c649dfff421e188aeb43f4609d9858.ctex"]
 
 [params]
 
