@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://0h22680bq4t4"]
+
+[ext_resource type="Script" uid="uid://bwq07ke3sy1ud" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Shader" uid="uid://beid37iw7hdqn" path="res://shaders/player.gdshader" id="2_g2els"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f5kvo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0juu"]
+render_priority = 0
+shader = ExtResource("2_g2els")
+shader_parameter/base_color = Color(0.12, 0.35, 0.75, 1)
+shader_parameter/highlight_color = Color(0.25, 0.65, 1, 1)
+shader_parameter/dark_color = Color(0.025, 0.06, 0.15, 1)
+shader_parameter/pulse_speed = 1.5
+shader_parameter/pulse_strength = 0.15
+shader_parameter/rim_strength = 1.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f5kvo"]
+material = SubResource("ShaderMaterial_k0juu")
+
+[node name="Player" type="CharacterBody3D" unique_id=1961020099]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=32422624]
+shape = SubResource("CapsuleShape3D_f5kvo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1585933581]
+mesh = SubResource("CapsuleMesh_f5kvo")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=269590967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=628215556]
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1184129219]
+current = true

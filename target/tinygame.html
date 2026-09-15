@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Shader Test</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        #canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<script src="tinygame.js"></script>
+
+<script>
+    const engine = new Engine({"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"tinygame","experimentalVK":false,"fileSizes":{"tinygame.pck":33172,"tinygame.wasm":37902138},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4});
+
+    engine.startGame({
+        canvas: document.getElementById("canvas")
+    });
+</script>
+
+</body>
+</html>
+
